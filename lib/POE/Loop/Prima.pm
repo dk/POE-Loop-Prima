@@ -1,4 +1,4 @@
-# $Id: Prima.pm,v 1.1 2007/08/10 13:36:09 dk Exp $
+# $Id: Prima.pm,v 1.2 2007/08/10 18:53:12 dk Exp $
 
 # Prima event loop bridge for POE::Kernel.
 
@@ -205,12 +205,12 @@ sub loop_do_timeslice
 	
 	# Check for a hung kernel.
 	$self-> _test_if_kernel_is_idle();
-	my $now;
-	$now = time() if TRACE_STATISTICS;
+
+	my $now = time if TRACE_STATISTICS;
 
 	$::application-> yield() if $::application;
 	
-	$self-> _data_stat_add('idle_seconds', time() - $now) if TRACE_STATISTICS;
+	$self-> _data_stat_add('idle_seconds', time - $now) if TRACE_STATISTICS;
 	
 	# Dispatch whatever events are due.  Update the next dispatch time.
 	$self-> _data_ev_dispatch_due();
