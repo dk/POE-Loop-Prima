@@ -1,4 +1,4 @@
-Prima.pm
+lib/POE/Loop/Prima.pm
 Changes
 MANIFEST
 Makefile.PL
