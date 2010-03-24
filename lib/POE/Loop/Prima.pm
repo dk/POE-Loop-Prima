@@ -1,4 +1,4 @@
-# $Id: Prima.pm,v 1.6 2010/03/24 21:48:52 dk Exp $
+# $Id: Prima.pm,v 1.7 2010/03/24 21:59:53 dk Exp $
 
 # Prima event loop bridge for POE::Kernel.
 
@@ -227,6 +227,12 @@ sub loop_run
 }
 
 sub loop_halt {}
+
+sub skip_tests
+{
+	return "Prima tests require the Prima module"
+		if do { eval "use Prima"; $@ };
+}
 
 1;
 
