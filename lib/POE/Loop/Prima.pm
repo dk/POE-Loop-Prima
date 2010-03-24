@@ -1,4 +1,4 @@
-# $Id: Prima.pm,v 1.3 2007/09/23 08:07:50 dk Exp $
+# $Id: Prima.pm,v 1.4 2010/03/24 10:40:52 dk Exp $
 
 # Prima event loop bridge for POE::Kernel.
 
@@ -125,9 +125,9 @@ sub loop_resume_time_watcher
 # Maintain filehandle watchers.
 
 my %mask = (
-	MODE_RD => [ fe::Read,       'onRead'      ],
-	MODE_WR => [ fe::Write,      'onWrite'     ],
-	MODE_EX => [ fe::Exception,  'onException' ],
+	MODE_RD , [ fe::Read,       'onRead'      ],
+	MODE_WR , [ fe::Write,      'onWrite'     ],
+	MODE_EX , [ fe::Exception,  'onException' ],
 );
 
 sub _loop_select_callback
