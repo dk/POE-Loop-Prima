@@ -1,4 +1,4 @@
-# $Id: Prima.pm,v 1.5 2010/03/24 10:41:55 dk Exp $
+# $Id: Prima.pm,v 1.6 2010/03/24 21:48:52 dk Exp $
 
 # Prima event loop bridge for POE::Kernel.
 
@@ -234,7 +234,7 @@ __END__
 
 =head1 NAME
 
-POE::Loop::Prima - a bridge that supports Prima event loop from POE
+POE::Loop::Prima - bridge between Prima and POE
 
 =head1 SYNOPSIS
 
