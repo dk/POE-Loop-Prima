@@ -1,4 +1,4 @@
-# $Id: Prima.pm,v 1.4 2010/03/24 10:40:52 dk Exp $
+# $Id: Prima.pm,v 1.5 2010/03/24 10:41:55 dk Exp $
 
 # Prima event loop bridge for POE::Kernel.
 
@@ -6,7 +6,7 @@ package POE::Loop::Prima;
 
 use strict;
 use warnings;
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 # Include common signal handling.
 use POE::Loop::PerlSignals;
