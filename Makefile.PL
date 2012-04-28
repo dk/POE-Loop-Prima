@@ -1,6 +1,7 @@
-# $Id: Makefile.PL,v 1.3 2010/03/24 21:59:52 dk Exp $
+# $Id: Makefile.PL,v 1.4 2012/04/28 18:07:15 dk Exp $
 use ExtUtils::MakeMaker;
-use POE::Test::Loops;
+eval "use POE::Test::Loops;";
+goto NO_POE if $@;
 
 unless (-t STDIN) {
 	warn "STDIN is not a terminal. Assuming --default.\n";
@@ -31,6 +32,8 @@ unless ($ret =~ /^Y$/i) {
 
 POE::Test::Loops::generate( 't', [ 'POE::Loop::Prima' ], 0 );
 
+NO_POE:
+
 WriteMakefile(
 	NAME           => 'POE::Loop::Prima',
 	AUTHOR         => 'Dmitry Karasik <dmitry@karasik.eu.org>',
@@ -41,7 +44,7 @@ WriteMakefile(
 	test           => { TESTS => 't/*.t t/poe_loop_prima/*.t' },
 	clean          => { FILES => 't/poe_loop_prima/*.t t/poe_loop_prima ' . $marker },
 	META_MERGE     => {
-	build_requires => { 'POE::Test::Loops' => '1.034' },
+		build_requires => { 'POE::Test::Loops' => '1.034' },
 	},
 );
 
