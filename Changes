@@ -5,3 +5,6 @@ Revision history for Perl extension POE::Loop::Prima
 
 1.02  - 24 Mar 2010
 	- minor fixes and testing using POE::Test::Loops
+
+1.03 -  8  Jun 2015
+        - minor test fixes

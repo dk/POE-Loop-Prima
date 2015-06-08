@@ -6,7 +6,7 @@ package POE::Loop::Prima;
 
 use strict;
 use warnings;
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 # Include common signal handling.
 use POE;
