@@ -9,6 +9,7 @@ use warnings;
 our $VERSION = '1.02';
 
 # Include common signal handling.
+use POE;
 use POE::Loop::PerlSignals;
 
 package POE::Kernel;
