@@ -45,6 +45,8 @@ WriteMakefile(
 	clean          => { FILES => 't/poe_loop_prima/*.t t/poe_loop_prima ' . $marker },
 	META_MERGE     => {
 		build_requires => { 'POE::Test::Loops' => '1.034' },
+		resources => {
+			repository => 'http://github.com/dk/POE-Loop-Prima'
+		},
 	},
 );
-
